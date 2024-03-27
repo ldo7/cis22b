@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+#include <time.h>
+
+const int COLUMNS=7;
+
+void displayArray(int array[][COLUMNS],int rows);
+
+int main()
+{
+    //#1
+    int TwoDArray[20][15];
+
+    //#2
+    double sales[3][2];
+    //a) 6 elements, 1 int = 4 bytes, 6 int = 24 bytes total
+                     //1 double = 8 bytes, 6 doubles = 48 bytes total
+    //b) 
+    sales[2][1]=223.9;
+    //c)
+    sales[3][2]=0; // NOT LAST INDEX 
+    sales[2][1]=0; // THIS IS LAST INDEX
+
+    //const int SIZE = 2;
+    int array[5][COLUMNS]={{1,2}};
+    displayArray(array,2);
+    cout << diagonal(array,2);
+
+    return 0;
+}
+
+//#4
+void displayArray(const int array[][COLUMNS],int rows) //Don't forget constant parameter!
+{
+    for (int i=0;i<rows;++i)
+    {
+        for (int j=0;i<COLUMNS;++i)
+        {
+            cout << array[i][j] << " ";
+        }
+    }
+}
+
+
+//#5
+bool diagonal(const int array[][COLUMNS],int rows)
+{
+    int sum = 0;
+    for (int i=0;i<rows;++i)
+    {
+        sum+=array[i][i];
+    }
+    /*
+    if (sum == 10)
+        return true;
+    else    
+        return false; */
+    return (sum == 10); //no need for if/else statement, just return boolean.
+}
+
+//#6
+void fill(int array[][COLUMNS],int rows)
+{
+    srand(time(0)); //PUT THIS IS MAIN BEFORE EXECUTION
+
+    int sum = 0;
+    for (int i=0;i<rows;++i)
+    {
+        for (int j=0;i<COLUMNS;++i)
+        {
+            array[i][j]=rand()%10; // % 9 --> [0,8]
+                                   // % 10 --> [0,9]
+        }
+    }
+}

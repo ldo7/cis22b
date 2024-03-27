@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    return 0;
+}
+
+
+//#1
+// function calls 
+int arr[3]={0};
+void function(int *arr) //given header
+
+function(arr) //find call
+
+int num = 0;
+function (&num) //call
+
+int num = 0;
+int ptr = &num;
+function(ptr); //call
+
+//#2
+// function header
+const int num[3]={0};
+function(num) // given call
+void function(const int* arr) //find header
+
+//#3
+int arr[3]={0};
+int *ptr = arr + size - 1;
+
+int* pSmall(int* pFirst, int* pLast)//find header & Loop
+{
+    int* smallest = pFirst; //set smallest to 1st element
+    for (int* i = ++pFirst; i <= pLast; ++i) //start loop at 2nd element UNTIL last element
+    {
+        if (*i < *smallest) //compare values
+            smallest = i;
+    }
+}
+
+
+//#4
+//shift array elements to the right
+//work backwards = save last element
+const int SIZE = 3;
+int arr[SIZE] = {1,2,3};
+int* ptr = &arr;
+
+int temp = ptr + SIZE - 1; // hold last element
+for (int i=0;i<SIZE; ++i)
+{
+    
+}
+
+//start background to ensure that 1st element is not copied over n over?
+
+
+//#5
+
+
+//#6
+
+
+//#7
+
+
+
+//#8
